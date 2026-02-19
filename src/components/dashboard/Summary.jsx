@@ -176,7 +176,7 @@ const SummaryPage = () => {
 
       {/* </div>  */}
 
-      <div className="grid   lg:grid-cols-3 gap-10">
+      <div className="grid   lg:grid-cols-3 gap-5">
 
         {/* Income */}
         <div className=" p-2 bg-white rounded-2xl shadow-md flex justify-between items-center">

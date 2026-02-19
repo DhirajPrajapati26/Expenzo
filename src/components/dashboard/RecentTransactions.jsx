@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import RecentTransactionList from "../transaction/RecentTransactionsGrid";
+import { ArrowRight } from "lucide-react";
 
 const RecentTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -69,24 +70,25 @@ const RecentTransactions = () => {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-sm hover:shadow-md transition p-6 mt-10">
+    <div className="bg-white rounded-3xl shadow-sm hover:shadow-md transition p-6 ">
 
 
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900">
+          <h2 className="text-lg font-bold text-slate-900">
             Recent Transactions
           </h2>
-          <p className="text-sm text-slate-500">
+          {/* <p className="text-xs text-slate-500">
             Your latest 5 financial activities
-          </p>
+            </p> */}
         </div>
 
         <Link
           to="/transaction"
-          className="text-sm font-medium text-blue-600 hover:text-blue-800 transition"
+          className="text-sm font-medium  flex gap-2 bg-pink-50 px-2 py-1 border rounded-md text-black hover:text-blue-800 transition"
         >
-          View All →
+          View All  <ArrowRight size={22} />
+
         </Link>
       </div>
 

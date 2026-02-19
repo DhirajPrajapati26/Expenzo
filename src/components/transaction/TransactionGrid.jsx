@@ -2,7 +2,7 @@ import TransactionCard from "./TransactionCard";
 
 const TransactionGrid = ({ transactions, onDelete, onEdit }) => {
   return (
-    <div className="mt-3">
+    <div className="mt-1">
       <div
         className="
         w-full

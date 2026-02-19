@@ -171,7 +171,7 @@ const TransactionPage = () => {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="max-w-6xl mx-auto px-4 py-6 grid gap-5"
+      className="max-w-6xl mx-auto pl-3 pr-2 py-6 grid gap-5"
     >
       {/* HEADER */}
       <div className="grid sm:grid-cols-2 gap-4 items-center">
@@ -252,7 +252,7 @@ const TransactionPage = () => {
 
           <Link
             to="/transaction/create"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-1 rounded-xl"
           >
             + Add Transaction
           </Link>
@@ -291,22 +291,22 @@ const TransactionPage = () => {
                 </div>
 
                 {/* STATS FROM BACKEND */}
-                <div className="p-4 grid  sm:grid-cols-3 gap-3">
-                  <div className="p-3   justify-items-center bg-green-50 rounded-xl">
+                <div className="p-4 flex gap-3">
+                  <div className="p-3 w-full   justify-items-center bg-green-50 rounded-xl">
                     <p className="text-xs">Income</p>
                     <p className="text-xl font-bold text-green-600">
                       +₹{summary.income}
                     </p>
                   </div>
 
-                  <div className="p-3 justify-items-center bg-red-50 rounded-xl">
+                  <div className="p-3 w-full justify-items-center bg-red-50 rounded-xl">
                     <p className="text-xs">Expense</p>
                     <p className="text-xl font-bold text-red-600">
                       - ₹{summary.expense}
                     </p>
                   </div>
 
-                  <div className="p-3 justify-items-center bg-blue-50 rounded-xl">
+                  <div className="p-3 w-full justify-items-center bg-blue-50 rounded-xl">
                     <p className="text-xs">Balance</p>
                     <p className="text-xl font-bold">₹{summary.balance}</p>
                   </div>
@@ -329,3 +329,23 @@ const TransactionPage = () => {
 };
 
 export default TransactionPage;
+//  <div className="p-4 grid  sm:grid-cols-3 gap-3">
+//                   <div className="p-3   justify-items-center bg-green-50 rounded-xl">
+//                     <p className="text-xs">Income</p>
+//                     <p className="text-xl font-bold text-green-600">
+//                       +₹{summary.income}
+//                     </p>
+//                   </div>
+
+//                   <div className="p-3 justify-items-center bg-red-50 rounded-xl">
+//                     <p className="text-xs">Expense</p>
+//                     <p className="text-xl font-bold text-red-600">
+//                       - ₹{summary.expense}
+//                     </p>
+//                   </div>
+
+//                   <div className="p-3 justify-items-center bg-blue-50 rounded-xl">
+//                     <p className="text-xs">Balance</p>
+//                     <p className="text-xl font-bold">₹{summary.balance}</p>
+//                   </div>
+//                 </div>
