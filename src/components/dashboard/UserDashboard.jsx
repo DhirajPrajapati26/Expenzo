@@ -78,7 +78,7 @@ const UserDashboard = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           <ExpenseCategoryChart data={categoryData} />
-          <RecentTransactions />
+          <RecentTransactions className="" />
         </div>
 
       </div>

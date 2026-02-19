@@ -2,16 +2,16 @@ import bin from "../../assets/bin.png"
 import edit from "../../assets/edit.png"
 const RecentTransactionList = ({ transactions, onDelete, onEdit }) => {
     return (
-        <div className="divide-y divide-slate-100">
+        <div className="divide-y  divide-slate-100" >
             {transactions.map((item) => {
                 const isIncome = item.type === "income";
 
                 return (
                     <div
                         key={item._id}
-                        className="flex items-center justify-between py-4 hover:bg-slate-50 px-2 rounded-xl transition"
+                        className="flex  items-center justify-between py-4 hover:bg-slate-50 px-2 rounded-xl transition"
                     >
-                      
+
                         <div>
                             <p className="font-medium text-slate-800">
                                 {item.category}

@@ -70,7 +70,7 @@ const RecentTransactions = () => {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-sm hover:shadow-md transition p-6 ">
+    <div className="bg-white rounded-3xl shadow-md hover:shadow-lg transition p-6 ">
 
 
       <div className="flex items-center justify-between mb-6">
