@@ -36,7 +36,7 @@ const Navbar = () => {
               alt="logo"
               className="w-7 h-7 sm:w-8 sm:h-8"
             />
-            <span className="text-sm sm:text-xl whitespace-nowrap">
+            <span className="text-lg  sm:text-xl whitespace-nowrap">
               Expense Tracker
             </span>
           </Link>

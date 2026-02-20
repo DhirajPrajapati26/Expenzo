@@ -23,7 +23,7 @@ const ExpenseCategoryChart = ({ data }) => {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white rounded-3xl shadow-sm hover:shadow-md transition p-6"
+      className="bg-white rounded-3xl outline-none shadow-sm hover:shadow-md transition p-6"
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold text-slate-900">
@@ -51,6 +51,9 @@ const ExpenseCategoryChart = ({ data }) => {
                 innerRadius={70}
                 outerRadius={100}
                 paddingAngle={3}
+                stroke="none"
+                tabIndex={-1}
+                className="focus:outline-none"
               >
                 {data.map((entry, index) => (
                   <Cell
