@@ -11,21 +11,6 @@ const Home = () => {
           💰 Expense Tracker
         </h1>
 
-        <div className="space-x-4">
-          <Link
-            to="/login"
-            className="px-5 py-2 rounded-xl bg-white/20 backdrop-blur-md hover:bg-white/30 transition"
-          >
-            Login
-          </Link>
-
-          <Link
-            to="/signup"
-            className="px-5 py-2 rounded-xl bg-white text-indigo-600 font-semibold hover:scale-105 transition"
-          >
-            Sign Up
-          </Link>
-        </div>
       </nav>
 
       {/* HERO SECTION */}
