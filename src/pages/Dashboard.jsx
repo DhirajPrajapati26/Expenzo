@@ -1,126 +1,132 @@
-import {
-  Wallet,
-  PlusCircle,
-  List,
-  Clock,
-  BarChart3,
-  LogIn,
-  Edit,
-} from "lucide-react";
 import { Link } from "react-router-dom";
+// import dashboardPreview from "../assets/dashboard-preview.png"; // optional screenshot
 
-function FeatureCard(feature) {
+const Home = () => {
   return (
-    <div className="bg-white p-5 rounded-2xl shadow hover:shadow-md transition">
-      <div className="text-indigo-600 mb-2">{feature.icon}</div>
-      <h4 className="font-semibold mb-1">{feature.title}</h4>
-      <p className="text-sm text-gray-600">{feature.text}</p>
-    </div>
-  );
-}
+    <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
 
-export default function ExpenseTrackerHomeDashboard() {
-  return (
-    <div className="min-h-screen bg-gray-50">
+      {/* NAVBAR */}
+      <nav className="flex justify-between items-center px-8 py-5">
+        <h1 className="text-2xl font-bold tracking-wide">
+          💰 Expense Tracker
+        </h1>
 
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6 items-center">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-3">
-              Take Control of Your Money
-            </h1>
-            <p className="text-base opacity-90 mb-4">
-              Add transactions, monitor recent activities and analyze monthly
-              spending - all in one simple expense tracker.
-            </p>
+        <div className="space-x-4">
+          <Link
+            to="/login"
+            className="px-5 py-2 rounded-xl bg-white/20 backdrop-blur-md hover:bg-white/30 transition"
+          >
+            Login
+          </Link>
 
-            <div className="flex gap-4">
-              <Link
-                to="/signup"
-                className="bg-white text-indigo-700 px-6 py-3 rounded-2xl font-semibold shadow"
-              >
-                Sign Up
-              </Link>
-              <Link
-                to="/login"
-                className="border border-white px-6 py-3 rounded-2xl"
-              >
-                Login
-              </Link>
-            </div>
-          </div>
-
-          <div className="hidden md:flex justify-center">
-            <Wallet size={110} className="opacity-80" />
-          </div>
+          <Link
+            to="/signup"
+            className="px-5 py-2 rounded-xl bg-white text-indigo-600 font-semibold hover:scale-105 transition"
+          >
+            Sign Up
+          </Link>
         </div>
-      </section>
+      </nav>
 
-      {/* MOTIVE */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-3">Why This Platform?</h2>
-        <p className="text-gray-600">
-          Many people lose track of small expenses. This tracker helps you keep
-          a clear record of income and spending so you can build better
-          financial habits and avoid unnecessary expenses.
+      {/* HERO SECTION */}
+      <div className="flex flex-col items-center text-center px-6 mt-16">
+        <h2 className="text-5xl font-bold leading-tight max-w-3xl">
+          Take Control of Your Money.
+        </h2>
+
+        <p className="mt-6 text-lg max-w-xl text-white/80">
+          Track your income, manage expenses, and understand your spending
+          habits with beautiful analytics and real-time insights.
         </p>
-      </section>
 
-      {/* FEATURES */}
-      <section className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6">
-        <Link to="/transaction/create">
-          <FeatureCard
-            icon={<PlusCircle size={28} />}
-            title="Add Transactions"
-            text="Add income or expense with amount, category and note in seconds."
-          />
-        </Link>
-        <Link to="/transaction">
-          <FeatureCard
-            icon={<List size={28} />}
-            title="View Transactions"
-            text="See complete history with clean and simple table view."
-          />
-        </Link>
-        <Link>
-          <FeatureCard
-            icon={<Clock size={28} />}
-            title="Recent Activities"
-            text="Quick overview of your latest spending and income."
-          />
-        </Link>
-        <Link>
-          <FeatureCard
-            icon={<BarChart3 size={28} />}
-            title="Last Month Summary"
-            text="Understand your previous month spending pattern easily."
-          />
-        </Link>
-        <Link>
-          <FeatureCard
-            icon={<LogIn size={28} />}
-            title="Personal Dashboard"
-            text="Secure account with private data for every user."
-          />
-        </Link>
-      </section>
+        <div className="mt-8 space-x-4">
+          <Link
+            to="/signup"
+            className="px-8 py-3 rounded-2xl bg-white text-indigo-600 font-semibold shadow-lg hover:scale-105 transition"
+          >
+            Get Started Free
+          </Link>
 
-      {/* CTA */}
-      <section className="max-w-4xl mx-auto px-4 py-12 text-center">
-        <h3 className="text-2xl font-semibold mb-3">
-          Start Managing Your Expenses Today
-        </h3>
-        <p className="text-gray-600 mb-6">Track it. Control it. Save it.</p>
-
-        <div className="flex justify-center gap-4">
-          <button className="bg-indigo-600 text-white px-6 py-3 rounded-2xl">
-            Sign Up Now
-          </button>
-          <button className="border px-6 py-3 rounded-2xl">
-            Add Transaction
-          </button>
+          <Link
+            to="/login"
+            className="px-8 py-3 rounded-2xl border border-white hover:bg-white/20 transition"
+          >
+            Login
+          </Link>
         </div>
-      </section>
+      </div>
+
+      {/* FEATURES SECTION */}
+      <div className="mt-28 px-8 pb-20 bg-white text-gray-800 rounded-t-[60px]">
+
+        <div className="text-center pt-20">
+          <h3 className="text-3xl font-bold">Why Use Our Expense Tracker?</h3>
+          <p className="text-gray-500 mt-3">
+            Everything you need to manage finances smartly.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-10 mt-16 max-w-6xl mx-auto">
+
+          <div className="p-6 rounded-3xl shadow-lg hover:shadow-xl transition">
+            <h4 className="text-xl font-semibold mb-3">📊 Smart Analytics</h4>
+            <p className="text-gray-600">
+              Visual charts and monthly breakdown to understand your spending.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl shadow-lg hover:shadow-xl transition">
+            <h4 className="text-xl font-semibold mb-3">💼 Income & Expense Tracking</h4>
+            <p className="text-gray-600">
+              Easily add, edit, and delete transactions anytime.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl shadow-lg hover:shadow-xl transition">
+            <h4 className="text-xl font-semibold mb-3">🔐 Secure & Private</h4>
+            <p className="text-gray-600">
+              Your financial data is safe and protected with authentication.
+            </p>
+          </div>
+
+        </div>
+
+        {/* PREVIEW SECTION */}
+        <div className="mt-24 text-center">
+          <h3 className="text-3xl font-bold">Clean & Powerful Dashboard</h3>
+
+          {/* <div className="mt-10 flex justify-center">
+            <img
+              src={dashboardPreview}
+              alt="Dashboard Preview"
+              className="rounded-3xl shadow-2xl w-full max-w-4xl"
+            />
+          </div> */}
+        </div>
+
+        {/* CTA SECTION */}
+        <div className="mt-24 text-center pb-16">
+          <h3 className="text-3xl font-bold">
+            Ready to manage your finances better?
+          </h3>
+
+          <Link
+            to="/signup"
+            className="inline-block mt-8 px-10 py-4 bg-indigo-600 text-white rounded-2xl font-semibold shadow-lg hover:scale-105 transition"
+          >
+            Create Your Free Account
+          </Link>
+        </div>
+
+      </div>
+
+      {/* FOOTER */}
+      <footer className="text-center py-6 text-white/70 text-sm">
+        © {new Date().getFullYear()} Expense Tracker. All rights reserved.
+      </footer>
+
     </div>
   );
-}
+};
+
+export default Home;

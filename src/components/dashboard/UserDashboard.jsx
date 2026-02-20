@@ -70,15 +70,26 @@ const UserDashboard = () => {
 
 
   return (
-    <div className="flex h-screen  bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
 
-      <div className="flex-1  p-6 md:p-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
-        <SummaryPage />
+        {/* Summary Section */}
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-4 sm:p-6">
+          <SummaryPage />
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <ExpenseCategoryChart data={categoryData} />
-          <RecentTransactions className="" />
+        {/* Charts + Recent */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-4 sm:p-6">
+            <ExpenseCategoryChart data={categoryData} />
+          </div>
+
+          <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-4 sm:p-6">
+            <RecentTransactions />
+          </div>
+
         </div>
 
       </div>

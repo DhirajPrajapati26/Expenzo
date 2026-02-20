@@ -76,7 +76,7 @@ const ExpenseCategoryChart = ({ data }) => {
         </div>
       )}
 
- 
+
       {data.length > 0 && (
         <div className="mt-6 space-y-2">
           {data.map((item, index) => (

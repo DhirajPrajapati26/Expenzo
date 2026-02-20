@@ -1,3 +1,4 @@
+import { FiMenu, FiX } from "react-icons/fi";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
@@ -8,20 +9,43 @@ const Navbar = () => {
   const { logout } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 
+
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between relative">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md">
 
-        {/* Logo */}
-        <Link
-          className="flex items-center gap-2 text-xl md:text-2xl font-semibold"
-          to="/user"
-        >
-          <img src={logo} alt="logo" className="w-7 h-7 md:w-8 md:h-8" />
-          Expense Tracker
-        </Link>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
 
-        <div className="hidden min-[700px]:flex items-center gap-10 text-sm font-medium">
+        {/* LEFT SECTION */}
+        <div className="flex items-center gap-3">
+
+          {/* Hamburger */}
+          <button
+            className="min-[700px]:hidden p-2 rounded-lg hover:bg-white/20 transition"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <FiX size={22} /> : <FiMenu size={22} />}
+          </button>
+
+          {/* Logo */}
+          <Link
+            className="flex items-center gap-2 font-semibold tracking-wide"
+            to="/user"
+          >
+            <img
+              src={logo}
+              alt="logo"
+              className="w-7 h-7 sm:w-8 sm:h-8"
+            />
+            <span className="text-sm sm:text-xl whitespace-nowrap">
+              Expense Tracker
+            </span>
+          </Link>
+
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden min-[700px]:flex items-center gap-8 text-sm font-medium">
+
           <Link
             to="/transaction/create"
             className="text-indigo-100 hover:text-white transition"
@@ -38,51 +62,46 @@ const Navbar = () => {
 
           <button
             onClick={logout}
-            className="bg-white text-indigo-600 px-4 py-1.5 rounded-lg hover:bg-indigo-100 transition"
+            className="bg-white text-indigo-600 px-4 py-1.5 rounded-xl font-medium hover:bg-indigo-100 transition"
           >
             Logout
           </button>
+
         </div>
-
-        <button
-          className="min-[700px]:hidden"
-          onClick={() => setOpen(!open)}
-        >
-          <img className="h-8" src={hamburger2} alt="menu" />
-        </button>
-
-        {/* Mobile Menu */}
-        {open && (
-          <div className="absolute top-14 left-0 w-full bg-indigo-700 flex flex-col py-4 px-6 space-y-3 min-[700px]:hidden shadow-lg">
-            
-            <Link
-              className="block"
-              to="/transaction/create"
-              onClick={() => setOpen(false)}
-            >
-              Add Transaction
-            </Link>
-
-            <Link
-              className="block"
-              to="/transaction"
-              onClick={() => setOpen(false)}
-            >
-              Transactions
-            </Link>
-
-            <button
-              className="text-left text-red-300"
-              onClick={() => {
-                logout();
-                setOpen(false);
-              }}
-            >
-              Logout
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="min-[700px]:hidden bg-indigo-600/95 backdrop-blur-md px-6 py-4 space-y-4 shadow-lg">
+
+          <Link
+            className="block text-indigo-100 hover:text-white transition"
+            to="/transaction/create"
+            onClick={() => setOpen(false)}
+          >
+            Add Transaction
+          </Link>
+
+          <Link
+            className="block text-indigo-100 hover:text-white transition"
+            to="/transaction"
+            onClick={() => setOpen(false)}
+          >
+            Transactions
+          </Link>
+
+          <button
+            className="block text-left text-red-200 hover:text-red-100 transition"
+            onClick={() => {
+              logout();
+              setOpen(false);
+            }}
+          >
+            Logout
+          </button>
+
+        </div>
+      )}
     </nav>
   );
 };
